@@ -12,6 +12,7 @@ img {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: aquamarine;
+    font-weight: bold;
 }
 
 .container {
@@ -33,6 +34,13 @@ body {
 .list {
     box-shadow: 10px 10px rgba(0, 0, 0, 0.632);
     width: 400px;
+}
+
+.elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .add_task>input {

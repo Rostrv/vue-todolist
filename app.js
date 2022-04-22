@@ -4,23 +4,23 @@ const app = new Vue({
         newTask: [],
 
         tasks: [{
-                text: 'learn Javascript',
+                text: 'Learn Javascript',
                 done: false
             },
 
             {
-                text: 'go crazy',
+                text: 'Go crazy',
                 done: true
 
             },
 
             {
-                text: 'clean camera lenses',
+                text: 'Clean camera lenses',
                 done: false
             },
 
             {
-                text: 'walk the dog',
+                text: 'Walk the dog',
                 done: true
             }
 
