@@ -27,7 +27,7 @@
                 <h3 class="text-uppercase">Todo list</h3>
 
                 <div v-for="(task, index) in tasks" class="">
-                    <span @click="changeDone(index)">
+                    <span @click="checked(index)">
                             <span v-if="task.done === true" class="text-decoration-line-through"> {{task.text}}</span>
                     <span v-else> {{task.text}}</span>
                     </span>
