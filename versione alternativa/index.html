@@ -30,12 +30,16 @@
                     <div v-for="(task, index) in tasks" class="elements border-bottom">
                         <!-- Vedi funzioni con parametri -->
                         <!-- Prendo task ( oggetto ) dal v-for sopra e lo passo come parametro a checked sotto, checked(task, index), verrà intercettato nel js, checked(task, index) -->
-                        <div @click="checked(task, index)">
-                            <div v-if="task.done === true" class="text-decoration-line-through text-success">
+                        <div>
+                            <div v-if="task.done === true" class="text-success">
                                 {{task.text}}</div>
                             <div v-else class="text-danger"> {{task.text}}</div>
                         </div>
-                        <i class="px-2 fa-solid fa-times-circle" @click="removeTask(index)"></i>
+                        <div class="icons">
+                            <i class="px-2 fa-solid fa-circle-check fa-xl" @click="checked(task, index)"></i>
+                            <i class="px-2 fa-solid fa-trash fa-xl" @click="removeTask(index)"></i>
+                        </div>
+
                     </div>
                 </section>
                 <p v-else>
@@ -48,7 +52,7 @@
                     <!-- Passo task e index alla funzione checked -->
                     <div v-for="(task, index) in completed" class="elements border-bottom">
                         <div @click="checked(task, index)">
-                            <div v-if="task.done === true" class="text-decoration-line-through text-success">
+                            <div v-if="task.done === true" class="text-success">
                                 {{task.text}}</div>
                         </div>
                         <i class="px-2 fa-solid fa-rotate-left" @click="moveInTodo(task, index)"></i>

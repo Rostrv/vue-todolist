@@ -43,6 +43,14 @@ body {
     margin-bottom: 20px;
 }
 
+.icons {
+    cursor: pointer;
+}
+
+.fa-circle-check {
+    color: rgb(32, 224, 32);
+}
+
 .add_task>input {
     padding: 1rem;
     border: none;

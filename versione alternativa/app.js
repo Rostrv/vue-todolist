@@ -6,25 +6,25 @@ const app = new Vue({
         completed: [],
 
         tasks: [{
-            text: 'Learn Javascript',
-            done: false
-        },
+                text: 'Learn Javascript',
+                done: false
+            },
 
-        {
-            text: 'Go crazy',
-            done: true
+            {
+                text: 'Go crazy',
+                done: false
 
-        },
+            },
 
-        {
-            text: 'Clean camera lenses',
-            done: false
-        },
+            {
+                text: 'Clean camera lenses',
+                done: false
+            },
 
-        {
-            text: 'Walk the dog',
-            done: true
-        }
+            {
+                text: 'Walk the dog',
+                done: false
+            }
 
         ],
 
