@@ -25,7 +25,7 @@
             </div>
 
             <div class="section_container">
-                <section v-if="tasks.length > 0" class="bg-light p-4 rounded border border-3 box">
+                <section class="bg-light p-4 rounded border border-3 box">
                     <h3 class="text-uppercase mb-5">To-do list</h3>
 
                     <!-- Passo task e index alla funzione checked -->
@@ -45,7 +45,7 @@
                     </div>
                 </section>
 
-                <section v-if="completed.length > 0" class="bg-light p-4 rounded border border-3 box">
+                <section class="bg-light p-4 rounded border border-3 box">
                     <h3 class="text-uppercase mb-5">completed</h3>
 
                     <!-- Passo task e index alla funzione checked -->
@@ -63,7 +63,7 @@
                     </div>
                 </section>
 
-                <section v-if="recycle.length > 0" class="bg-light p-4 rounded border border-3 box">
+                <section class="bg-light p-4 rounded border border-3 box">
                     <h3 class="text-uppercase ">recycle bin</h3>
                     <span @click="deleteAll()" class="text-danger mb-5">(Delete all)</span>
                     <div class="list">
