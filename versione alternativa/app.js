@@ -5,6 +5,8 @@ const app = new Vue({
 
         completed: [],
 
+        recycle: [],
+
         tasks: [{
                 text: 'Learn Javascript',
                 done: false
@@ -57,17 +59,35 @@ const app = new Vue({
 
         },
 
-        // Dalla lista di destra li rimetto in quella Todo
+
         moveInTodo(task, index) {
-            // Pusho sul vecchio array
+
             this.tasks.push({ text: task.text, done: false });
-            // Rimuovo dal vechcio array
             this.completed.splice(index, 1);
+
         },
 
-        // Rimuovo i task dalla lista di sinistra
-        removeTask(index) {
+
+        removeTask(task, index) {
+            this.recycle.push({ text: task.text, done: false });
             this.tasks.splice(index, 1);
+            this.completed.splice(index, 1);
+
+        },
+
+        restore(task, index) {
+
+            this.tasks.push({ text: task.text, done: false });
+            this.recycle.splice(index, 1)
+        },
+
+
+        deleteAll() {
+            this.recycle.splice(0, this.recycle.length)
+
         }
+
     }
+
+
 });
