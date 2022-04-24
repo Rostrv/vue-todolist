@@ -46,7 +46,12 @@ body {
     width: 400px;
     height: 400px;
     margin: 10px;
+}
+
+.list {
     overflow-y: auto;
+    height: 250px;
+    padding: 10px;
 }
 
 .elements {

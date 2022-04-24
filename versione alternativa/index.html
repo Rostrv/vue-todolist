@@ -29,53 +29,54 @@
                     <h3 class="text-uppercase mb-5">To-do list</h3>
 
                     <!-- Passo task e index alla funzione checked -->
-                    <div v-for="(task, index) in tasks" class="elements border-bottom">
-                        <!-- Prendo task ( oggetto ) dal v-for sopra e lo passo come parametro a checked sotto, checked(task, index), verrà intercettato nel js, checked(task, index) -->
-                        <div>
-                            <div v-if="task.done === true" class="text-success">
-                                {{task.text}}</div>
-                            <div v-else class="text-danger"> {{task.text}}</div>
+                    <div class="list">
+                        <div v-for="(task, index) in tasks" class="elements border-bottom">
+                            <!-- Prendo task ( oggetto ) dal v-for sopra e lo passo come parametro a checked sotto, checked(task, index), verrà intercettato nel js, checked(task, index) -->
+                            <div>
+                                <div v-if="task.done === true" class="text-success">
+                                    {{task.text}}</div>
+                                <div v-else class="text-danger"> {{task.text}}</div>
+                            </div>
+                            <div class="icons">
+                                <i class="px-2 fa-solid fa-circle-check fa-xl" @click="checked(task, index)"></i>
+                                <i class="px-2 fa-solid fa-trash fa-xl" @click="removeTask(task, index)"></i>
+                            </div>
                         </div>
-                        <div class="icons">
-                            <i class="px-2 fa-solid fa-circle-check fa-xl" @click="checked(task, index)"></i>
-                            <i class="px-2 fa-solid fa-trash fa-xl" @click="removeTask(task, index)"></i>
-                        </div>
-
                     </div>
                 </section>
-                <p v-else class="me-5">
-                    You're the Man!
-                </p>
 
-                <section class="bg-light p-4 rounded border border-3 box">
+                <section v-if="completed.length > 0" class="bg-light p-4 rounded border border-3 box">
                     <h3 class="text-uppercase mb-5">completed</h3>
 
                     <!-- Passo task e index alla funzione checked -->
-                    <div v-for="(task, index) in completed" class="elements border-bottom">
-                        <div @click="checked(task, index)">
-                            <div v-if="task.done === true" class="text-success">
-                                {{task.text}}</div>
-                        </div>
-                        <div class="icons">
-                            <i class="px-2 fa-solid fa-rotate-left fa-xl" @click="moveInTodo(task, index)"></i>
-                            <i class="px-2 fa-solid fa-trash fa-xl" @click="removeTask(task, index)"></i>
+                    <div class="list">
+                        <div v-for="(task, index) in completed" class="elements border-bottom">
+                            <div @click="checked(task, index)">
+                                <div v-if="task.done === true" class="text-success">
+                                    {{task.text}}</div>
+                            </div>
+                            <div class="icons">
+                                <i class="px-2 fa-solid fa-rotate-left fa-xl" @click="moveInTodo(task, index)"></i>
+                                <i class="px-2 fa-solid fa-trash fa-xl" @click="removeTask(task, index)"></i>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="bg-light p-4 rounded border border-3 box">
+                <section v-if="recycle.length > 0" class="bg-light p-4 rounded border border-3 box">
                     <h3 class="text-uppercase ">recycle bin</h3>
                     <span @click="deleteAll()" class="text-danger mb-5">(Delete all)</span>
-
-                    <div v-for="(task, index) in recycle" class="elements border-bottom">
-                        <div>
-                            <div v-if="task.done === false">{{task.text}}</div>
+                    <div class="list">
+                        <div v-for="(task, index) in recycle" class="elements border-bottom">
+                            <div>
+                                <div v-if="task.done === false">{{task.text}}</div>
+                            </div>
+                            <i class="px-2 fa-solid fa-trash-can-arrow-up fa-xl" @click="restore(task, index)"></i>
                         </div>
-                        <i class="px-2 fa-solid fa-trash-can-arrow-up fa-xl" @click="restore(task, index)"></i>
                     </div>
-
                 </section>
             </div>
+
         </div>
     </div>
 

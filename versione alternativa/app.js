@@ -85,7 +85,9 @@ const app = new Vue({
         deleteAll() {
             this.recycle.splice(0, this.recycle.length)
 
-        }
+        },
+
+
 
     }
 
